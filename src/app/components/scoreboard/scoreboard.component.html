@@ -1,18 +1,25 @@
 <crud>
 	<div picture>
-		<img class="img-top" src="assets/logos/nollep2018.png" alt="Card image cap">
+		<img class="img-top" src="assets/logos/nollep2019.png" alt="Card image cap">
 		<!-- <div class="card-body">
 		</div> -->
 	</div>
 	<div text>
 		<div *ngIf="!showScore">
+			<br>
+			<br>
+			<br>
 			<div *ngFor="let item of scores; let i = index" class="col-md-12 col-lg-12" style="text-align: center">
-				<p>{{item.score}}</p>
+				<div class="col-12">
+					<div class="ophText" (click)="flavorTextToShow()">
+						<h4 *ngIf="item.isVisible">{{item.score}}</h4>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div *ngIf="showScore">
 			<img class="class-img col-xs-12 col-sm-12 col-md-12 col-lg-12" src="{{classImg}}" alt="">
-			<div class="container">
+			<div class="container-fluid">
 				<div class="col-md-12 justify-content-md-center" style="text-align: center;">
 					<!-- <div class="coin gold"></div> -->
 					<img class="gold-img" src="/assets/Oscars_GULD.png" alt="">

@@ -1,0 +1,241 @@
+@border-color: #ff3755;
+@bg-color-Nav: rgba(13, 13, 13, 0.5);
+@bg-color-li: rgb(13, 13, 13);
+@hover-btn-color: #ff8496;
+@selected-btn-color: #ff516a;
+@title-color: #fff;
+
+@media screen and (min-width: 600px) {
+	.hide-mobile-menu {
+		visibility: hidden;
+	}
+
+	.navbar-nav > li {
+		display: inline-block;
+		float: none;
+		transform: translateY(127%);
+		background-color: transparent;
+		border-bottom: 3px solid @border-color;
+		box-sizing:border-box
+	}	
+
+	nav .nav-link:hover {
+		color: @hover-btn-color;
+	}
+
+	nav .nav-link.active {
+		color: @selected-btn-color;
+	}
+
+	.arrow-nav-left {
+		position: absolute;
+		width: 0;
+		height: 0;
+		border-left: 75vh solid rgba(255,82,107, 0.3);
+		border-right: 75px solid transparent;
+		border-bottom: 60px solid rgba(255,82,107, 0.3);
+	}
+
+	.arrow-nav-right {
+		position: absolute;
+		width: 0;
+		height: 0;
+		border-left: 75px solid transparent;
+		border-right: 800px solid rgba(255,108,129, 0.3);
+		border-bottom: 60px solid rgba(255,108,129, 0.3);
+	}
+
+	.arrow {
+		z-index: -1;
+		position: absolute;
+		width: 0;
+		height: 0;
+		border-left: 30px solid transparent;
+		border-right: 30px solid transparent;
+
+		border-bottom: 30px solid @bg-color-li;
+	}
+
+	.arrow-left {
+		transform: translateX(-80%) translateY(-122%) rotate(45deg);
+	}
+
+	.arrow-right {
+		transform: translateX(172%) translateY(-122%) rotate(-45deg);
+	}
+
+	.line {
+		width: 60px;
+		height: 3px;
+		background-color: @border-color;
+		position: absolute;
+		border-bottom: 3px solid @border-color;
+		z-index: 1;
+	}
+
+	.lineLeft {
+		transform: translateX(-97%) translateY(-447%) rotate(45deg);
+	}
+
+	.lineRight {
+		transform: translateX(189%) translateY(-450%) rotate(-45deg);
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.dropdown-menu.show {
+		background-color: #5c5c5c;
+		transform: translate3d(240px, 88px, 0px) !important;
+		border-color: #ff3855;
+		border-width: 3px;
+		> a{
+			color: @selected-btn-color;
+		}
+		> a:hover{
+			color: @hover-btn-color;
+		}
+	}
+
+	.arrow-nav-left {
+		position: absolute;
+		width: 0;
+		height: 0;
+		border-left: 10vh solid rgba(255,82,107, 0.3);
+		border-right: 50px solid transparent;
+		border-bottom: 46px solid rgba(255,82,107, 0.3);
+	}
+
+	.arrow-nav-right {
+		position: absolute;
+		width: 0;
+		height: 0;
+		border-left: 50px solid transparent;
+		border-right: 100px solid rgba(255,108,129, 0.3);
+		border-bottom: 46px solid rgba(255,108,129, 0.3);
+	}
+}
+
+.mobile-style {
+	margin-top: 10px;
+	border-left: 3px solid black;
+	border-right: 3px solid black;
+	border-top: 3px solid black;
+	transform: translateY(4%);
+}
+
+.navbar-nav > li {
+	background-color: @bg-color-li;
+}
+
+.navbar {
+	border-bottom: 3px solid @border-color;
+	background-color: @bg-color-Nav !important;
+}
+
+.navbar-brand {
+	transform: translateX(-50%);
+	left: 50%;
+	position: absolute;
+}
+
+.navbar-nav {
+	float: none;
+	margin: 0 auto;
+	display: block;
+	text-align: center;
+}
+
+.menu-mobile > a {
+	float: none;
+	background-color: #343a40;
+}
+
+/* Font Setup */
+
+.font header {
+	transform: translateX(-50%) translateY(-40%);
+	left: 50%;
+	position: absolute;
+}
+
+/* SCREEN */
+.main-font-screen {
+	color: @title-color;
+	font-size: 2.5rem;
+	font-family: Georgia;
+}
+
+.year-font-screen {
+	color: @title-color;
+	font-size: 1.6rem;
+	text-align: center;
+	transform: translate(10%,-70%);
+	font-family: Georgia;
+}
+/* SCREEN */
+
+/* PHONE */
+.main-font-phone {
+	color: @title-color;
+	font-size: 1.7rem;
+	font-family: Georgia;
+}
+
+.year-font-phone {
+	color: @title-color;
+	font-size: 1.2rem;
+	text-align: center;
+	font-family: Georgia;
+	transform: translate(10%,-70%);
+}
+
+/* PHONE */
+
+.img-glyph {
+	height: 17px;
+	width: auto;
+	transform: translateY(-15%);
+}
+
+li:hover > a:not(.active) img{
+	filter: brightness(115%);
+}
+
+li > .active > img{
+	filter: brightness(150%);
+}
+
+li:hover > a span{
+	filter: brightness(115%);
+}
+
+li > .active > span{
+	filter: brightness(115%);
+}
+
+li:hover > a span{
+	filter: brightness(115%);
+}
+
+li > .active > span{
+	filter: brightness(115%);
+}
+
+.badge1 {
+	position:relative;
+
+	&[data-badge]:after {
+		content: attr(data-badge);
+		position: absolute;
+		top: -7px;
+		right: -4px;
+		font-size: 0.7em;
+		background: #ff3855;
+		color: white;
+		width: 13px;
+		height: 13px;
+		text-align: center;
+		line-height: 11px;
+		border-radius: 50%;
+	}
+}

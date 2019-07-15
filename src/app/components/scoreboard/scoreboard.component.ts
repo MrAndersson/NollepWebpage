@@ -4,7 +4,7 @@ import { Http } from '@angular/http';
 @Component({
   selector: 'scoreboard',
   templateUrl: './scoreboard.component.html',
-  styleUrls: ['./scoreboard.component.css']
+  styleUrls: ['./scoreboard.component.less']
 })
 export class ScoreboardComponent implements OnInit {
 
@@ -22,7 +22,7 @@ export class ScoreboardComponent implements OnInit {
     .subscribe(res => {
 
       if(res.json()[0]['class'] === 'Överphösarna') {
-        this.scores = res.json().filter(e => e.class === 'Överphösarna');
+        this.scores = this.ophQuotes(res);
         return;
       }
 
@@ -61,4 +61,28 @@ export class ScoreboardComponent implements OnInit {
     });
   }
 
+  ophQuotes(res) {
+    let tmp = res.json().filter(e => e.class === 'Överphösarna');
+
+    let indexToShow = Math.floor(Math.random() * (tmp.length - 1));
+
+    tmp.map((e, i) => {
+      e['isVisible'] = i === indexToShow;
+      return e;
+    });
+
+    return tmp;
+  }
+
+  flavorTextToShow() {
+    let indexToShow = Math.floor(Math.random() * (this.scores.length - 1));
+
+    if(this.scores[indexToShow]['isVisible']) {
+      this.flavorTextToShow();
+      return;
+    }
+
+    this.scores.map(e => e['isVisible'] = false);
+    this.scores[indexToShow]['isVisible'] = true;
+  }
 }

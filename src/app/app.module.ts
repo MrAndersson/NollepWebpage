@@ -13,6 +13,8 @@ import { ScoreboardComponent } from './components/scoreboard/scoreboard.componen
 import { NewStudentComponent } from './components/new-student/new-student.component';
 import { CrudComponent }       from './components/crud/crud.component';
 import { ActivityComponent } from './components/activity/activity.component';
+import { SocialMediasComponent } from './components/crud/helpers/social-medias/social-medias.component';
+import { LetterToNollanComponent } from './components/letter-to-nollan/letter-to-nollan.component';
 
 
 // import {RoutesArray} from './../app.routes';
@@ -21,6 +23,7 @@ import { ActivityComponent } from './components/activity/activity.component';
  * ROUTES
  */
 const appRoutes: Routes = [
+  { path: 'letter-to-nollan',        component: LetterToNollanComponent },
   { path: 'home',        component: HomeComponent },
   { path: 'new-student', component: NewStudentComponent },
   { path: 'info',        component: NollepInfoComponent },
@@ -41,7 +44,9 @@ const appRoutes: Routes = [
     ScoreboardComponent,
     NewStudentComponent,
     CrudComponent,
-    ActivityComponent
+    ActivityComponent,
+    SocialMediasComponent,
+    LetterToNollanComponent
   ],
   imports: [
     NgbModule.forRoot(), // Bootstrap module
